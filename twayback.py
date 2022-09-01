@@ -31,7 +31,7 @@ async def asyncStarter(url_list, semaphore_size):
     # this will wrap our event loop and feed the the various urls to their async request function.
     status_list = []
     headers = {'user-agent':'Mozilla/5.0 (compatible; DuckDuckBot-Https/1.1; https://duckduckgo.com/duckduckbot)'}
-    
+
     # using a with statement seems to be working out better
     async with ClientSession(headers=headers) as a_session:
         # limit to 50 concurrent jobs
